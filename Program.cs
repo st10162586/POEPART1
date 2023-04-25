@@ -13,7 +13,7 @@ class menu
         Console.WriteLine("3 : reset to original scale ");
         Console.WriteLine("4 : clear data");
         Console.WriteLine("5 : exit");
-        
+        ///sdsfeetgryryhhf
         int menu;
        menu =  Convert.ToInt32(Console.ReadLine());
          
