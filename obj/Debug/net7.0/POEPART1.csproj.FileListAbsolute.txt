@@ -1,0 +1,15 @@
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\bin\Debug\net7.0\POEPART1.exe
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\bin\Debug\net7.0\POEPART1.deps.json
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\bin\Debug\net7.0\POEPART1.runtimeconfig.json
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\bin\Debug\net7.0\POEPART1.dll
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\bin\Debug\net7.0\POEPART1.pdb
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.csproj.AssemblyReference.cache
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.AssemblyInfoInputs.cache
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.AssemblyInfo.cs
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.csproj.CoreCompileInputs.cache
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.dll
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\refint\POEPART1.dll
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.pdb
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\POEPART1.genruntimeconfig.cache
+C:\Users\onkgo\Desktop\MSA\year 2\prog2A\POEPART1\obj\Debug\net7.0\ref\POEPART1.dll
