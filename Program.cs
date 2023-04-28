@@ -83,10 +83,35 @@ namespace POEPART1
                 Console.WriteLine("what is the quantity of the ingrediant" + "" + count + ""); // eg (which would make it 2 flour or 0.2 flour)
                 iQuantity[c] = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("examples for unit of cup , tablespoon , teaspoon ");
+                bool flag = false;
 
-                Console.WriteLine("enter measurement value of ingrediant" + "" + count);
-                ingredientM[c] = Console.ReadLine();
+                while (flag)
+                {
+                    Console.WriteLine("Units of measurment: \n1. cup  \n2. tablespoon \n3. teaspoon ");                    
+                    ingredientM[c] = Console.ReadLine();
+
+                    switch (ingredientM[c])
+                    {
+
+                        case "1":
+                            ingredientM[c] = "cup";
+                            break;
+
+                        case "2":
+                            ingredientM[c] = "tablespoon";
+                            break;
+
+                        case "3":
+                            ingredientM[c] = "teaspoon";
+                            break;
+                        default:
+                            Console.WriteLine("Please enter the number of the value you want to enter");
+                            break;
+
+                    }
+
+                }
+               
 
                 count++;
                 c++;
@@ -115,6 +140,7 @@ namespace POEPART1
             Console.WriteLine("");
 
         }
+
         public void Display()
         {
             
