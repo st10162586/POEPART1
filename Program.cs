@@ -84,6 +84,8 @@ namespace POEPART1
             int numS; // number of steps 
             int scale; // to scale 
             int menu3; // for the menu to move around the code
+            int menu4;
+            int menu5;
 
             int c = 0; // count to start positioning in the first loop 
             int s = 0; // count for the second loop
@@ -99,7 +101,7 @@ namespace POEPART1
 
             //intislising of arrays 
             private string[] listOfI;
-            private int[] iQuantity;
+            private Double[] iQuantity;
             private string[] ingredientM;
             private string[] steps;
 
@@ -119,7 +121,7 @@ namespace POEPART1
 
                 // decleration of arrays along with their size using input number of ingredients.
                 listOfI = new string[nIngredients];
-                iQuantity = new int[nIngredients];
+                iQuantity = new Double[nIngredients];
                 ingredientM = new string[nIngredients];
 
                 while (c < nIngredients)
@@ -229,7 +231,7 @@ namespace POEPART1
                 {
 
 
-                    Console.WriteLine(listOfI[a]); // display of Ingredients
+                    Console.WriteLine(listOfI[a]+ " " + iQuantity + " " + ingredientM[a]); // display of Ingredients
 
 
                 }
@@ -244,8 +246,44 @@ namespace POEPART1
 
                 }
 
+                Console.WriteLine("");
 
-            }
+                Console.WriteLine("what would you like to do (choose a number)");
+                Console.WriteLine("1 : enter recipe");
+                Console.WriteLine("2 : Display recipe");
+                Console.WriteLine("2 : scale recipe");
+                Console.WriteLine("3 : reset to original scale ");
+                Console.WriteLine("4 : clear data");
+                Console.WriteLine("5 : exit");
+
+                 menu4 = Convert.ToInt32(Console.ReadLine());//taking user input
+        if (menu3 <= 6)
+        {
+            if (menu4 == 1)
+            { Recipe(); } // recipeE is in the Creation class
+            else if (menu4 == 2)
+            { Display(); } // Display is in the Creation class
+            else if (menu4 == 3)
+            { Scale(); }  //  Scale is in the Creation class
+            else if (menu4 == 4)
+            { Reset(); }  // Reset is in the Creation class
+            else if (menu4 == 5)
+            { Clear(); }  // Clear is in the Creation class
+            else if (menu4 == 6)
+            { System.Environment.Exit(1); } // feaature to exist the program 
+        }
+        else if (menu4 > 6)
+        {
+            Console.WriteLine("please only enter numbers given and no letters ");
+            m1.Run();
+        }
+        else if (menu4 < 1)
+        {
+            Console.WriteLine("please only enter numbers given and no letters ");
+            m1.Run();
+        }
+
+    }
             public void Scale()
             {
                 // recieveing user input if they want to scale
@@ -275,7 +313,44 @@ namespace POEPART1
                     Clear();
                 }
 
-            }
+               Console.WriteLine("");
+
+               Console.WriteLine("what would you like to do (choose a number)");
+               Console.WriteLine("1 : enter recipe");
+               Console.WriteLine("2 : Display recipe");
+               Console.WriteLine("2 : scale recipe");
+               Console.WriteLine("3 : reset to original scale ");
+               Console.WriteLine("4 : clear data");
+               Console.WriteLine("5 : exit");
+
+                menu5 = Convert.ToInt32(Console.ReadLine());//taking user input
+            if (menu5 <= 6)
+            {
+              if (menu5 == 1)
+               { Recipe(); } // recipeE is in the Creation class
+                else if (menu5 == 2)
+               { Display(); } // Display is in the Creation class
+                else if (menu5 == 3)
+               { Scale(); }  //  Scale is in the Creation class
+                else if (menu5 == 4)
+               { Reset(); }  // Reset is in the Creation class
+                else if (menu5 == 5)
+               { Clear(); }  // Clear is in the Creation class
+                else if (menu5 == 6)
+               { System.Environment.Exit(1); } // feaature to exist the program 
+              }
+               else if (menu5 > 6)
+              {
+               Console.WriteLine("please only enter numbers given and no letters ");
+               m1.Run();
+              }
+              else if (menu5 < 1)
+              {
+              Console.WriteLine("please only enter numbers given and no letters ");
+              m1.Run();
+               }
+
+             }
             public void Reset()
             {
                 Console.WriteLine("would you like to Scale back to your original  recipe yes or no");
@@ -293,11 +368,13 @@ namespace POEPART1
                 {
                     Clear();
                 }
+
+  
             }
             public void Clear()
             {
                 listOfI = new string[0];
-                iQuantity = new int[0];
+                iQuantity = new Double [0];
                 ingredientM = new string[0];
                 steps = new string[0];
 
@@ -306,9 +383,11 @@ namespace POEPART1
                 Console.WriteLine("would you like to make another recipe yes or no");
                 q3 = Console.ReadLine(); // taking input of user 
 
-                if (q3.ToLower() == "yes")
+
+              //option to exit or start a new menu
+                if (q3.ToLower() == "yes") 
                 {
-                    Menu2 m = new Menu2();
+                    m1.Run();
                 }
                 else if (q3.ToLower() == "no")
                 {
