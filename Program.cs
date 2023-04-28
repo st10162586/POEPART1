@@ -15,12 +15,9 @@ namespace POEPART1
             Creation c = new Creation();
 
             Console.BackgroundColor = ConsoleColor.Magenta;
-            c.Recipe();
-            c.Display();
-            c.Scale();
-            c.Reset();
-            c.Clear();
-         
+            Menu1 m = new Menu1();
+            m.Run();
+
 
         }
     }
@@ -199,7 +196,22 @@ namespace POEPART1
 
         }
         public void Reset()
-      
+        {
+            Console.WriteLine("would you like to Scale back to your original  recipe yes or no");
+             q2 = Console.ReadLine();
+
+            if (q2.ToLower() == "yes")
+            {
+                for (int i = 0; i < iQuantity.Length; i++)
+                {
+                    Console.WriteLine(listOfI[i]);
+                    Console.WriteLine(iQuantity[i] /= scale);
+                }
+            }else if (q2.ToLower() == "no")
+            {
+                Clear();
+            }
+        }
         public void Clear()
         {
              listOfI = new string[0];
