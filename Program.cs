@@ -31,45 +31,46 @@ namespace POEPART1
             Creation c = new Creation(); // creating a constructor for creation class to use its methods 
 
             // creating a  menu for the user to enter software
-            string menu = null;
+            int menu;
            
             Console.WriteLine("what would you like to do (choose a number)");
             Console.WriteLine("1 : enter recipe");
             Console.WriteLine("2 : Display recipe");
-            Console.WriteLine("3: scale recipe");
-            Console.WriteLine("4 : reset to original scale ");
-            Console.WriteLine("5 : clear data");
-            Console.WriteLine("6 : exit");
-
+            Console.WriteLine("3 : scale recipe");
+            Console.WriteLine("3 : reset to original scale ");
+            Console.WriteLine("4 : clear data");
+            Console.WriteLine("5 : exit");
+            
 
             // error handling with exeption handling
 
-
-
-            while (menu != "6")
+            menu = int.Parse(Console.ReadLine());//taking user input
+            
+            if (menu <= 6)
             {
-                menu = Console.ReadLine();//taking user input
-
-                if (menu.Equals("1"))
+                if (menu == 1)
                 { c.Recipe(); } // recipeE is in the Creation class
-                else if (menu.Equals("2"))
+                else if (menu == 2)
                 { c.Display(); } // Display is in the Creation class
-                else if (menu.Equals("3"))
+                else if (menu == 3)
                 { c.Scale(); }  //  Scale is in the Creation class
-                else if (menu.Equals("4"))
+                else if (menu == 4)
                 { c.Reset(); }  // Reset is in the Creation class
-                else if (menu.Equals("5"))
+                else if (menu == 5)
                 { c.Clear(); }  // Clear is in the Creation class
-                else if (menu.Equals("6"))
+                else if (menu == 6)
                 { System.Environment.Exit(1); } // feaature to exist the program 
-                else
-                {
-                    Console.WriteLine("please only enter numbers given and no letters ");
-                    Run();
-                }
             }
-           
-           
+            else if (menu > 6)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                Run();
+            }
+            else if (menu < 1)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                Run();
+            }
         }
 
     }
@@ -82,10 +83,10 @@ namespace POEPART1
             int nIngredients; // number of ingrediants 
             int numS; // number of steps 
             int scale; // to scale 
-            String menu3; // for the menu to move around the code
-            String menu4;
-            String menu5;
-            String menu6;
+            int menu3; // for the menu to move around the code
+            int menu4;
+            int menu5;
+            int menu6;
              double r;
 
             int c = 0; // count to start positioning in the first loop 
@@ -202,32 +203,34 @@ namespace POEPART1
                 Console.WriteLine("5: clear data");
                 Console.WriteLine("6 : exit");
 
-                    menu3 = Console.ReadLine();//taking user input
-
-        while (menu3 != "6")
-        {
-            menu3 = Console.ReadLine();//taking user input
-
-            if (menu3.Equals("1"))
-            { Recipe(); } // recipeE is in the Creation class
-            else if (menu3.Equals("2"))
-            { Display(); } // Display is in the Creation class
-            else if (menu3.Equals("3"))
-            { Scale(); }  //  Scale is in the Creation class
-            else if (menu3.Equals("4"))
-            { Reset(); }  // Reset is in the Creation class
-            else if (menu3.Equals("5"))
-            { Clear(); }  // Clear is in the Creation class
-            else if (menu3.Equals("6"))
-            { System.Environment.Exit(1); } // feaature to exist the program 
-            else
+                    menu3 = Convert.ToInt32(Console.ReadLine());//taking user input
+            if (menu3<= 6)
+            {
+                if (menu3 == 1)
+                { Recipe(); } // recipee is in the Creation class
+                else if (menu3 == 2)
+                { Display(); } // Display is in the Creation class
+                else if (menu3== 3)
+                { Scale(); }  //  Scale is in the Creation class
+                else if (menu3 == 4)
+                { Reset(); }  // Reset is in the Creation class
+                else if (menu3== 5)
+                { Clear(); }  // Clear is in the Creation class
+                else if (menu3 == 6)
+                { System.Environment.Exit(1); } // feaature to exist the program 
+            }
+            else if (menu3 > 6)
             {
                 Console.WriteLine("please only enter numbers given and no letters ");
-                Recipe();
+                m1.Run();
             }
-        }
+            else if (menu3 < 1)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                m1.Run();
+            }
 
-    }
+            }
              //-------------------------------------------------------------------------------
             public void Display()
             {
@@ -265,106 +268,115 @@ namespace POEPART1
                 Console.WriteLine("5 : clear data");
                 Console.WriteLine("6 : exit");
 
-                 menu4 = Console.ReadLine();//taking user input
-
-        while (menu4 != "6")
+                 menu4 = Convert.ToInt32(Console.ReadLine());//taking user input
+        if (menu4 <= 6)
         {
-            menu4 = Console.ReadLine();//taking user input
-
-            if (menu4.Equals("1"))
+            if (menu4 == 1)
             { Recipe(); } // recipeE is in the Creation class
-            else if (menu4.Equals("2"))
+            else if (menu4 == 2)
             { Display(); } // Display is in the Creation class
-            else if (menu4.Equals("3"))
+            else if (menu4 == 3)
             { Scale(); }  //  Scale is in the Creation class
-            else if (menu4.Equals("4"))
+            else if (menu4 == 4)
             { Reset(); }  // Reset is in the Creation class
-            else if (menu4.Equals("5"))
+            else if (menu4 == 5)
             { Clear(); }  // Clear is in the Creation class
-            else if (menu4.Equals("6"))
+            else if (menu4 == 6)
             { System.Environment.Exit(1); } // feaature to exist the program 
-            else
-            {
-                Console.WriteLine("please only enter numbers given and no letters ");
-                Recipe();
-            }
         }
-
-    }
-    //-----------------------------------------------------------------------------
-    public void Scale()
-    {
-        // recieveing user input if they want to scale
-        Console.WriteLine("");
-        Console.WriteLine("would you like to Scale your recipe yes or no");
-        q1 = Console.ReadLine();
-
-        if (q1.ToLower() == "yes")
+        else if (menu4 > 6)
         {
-            Console.WriteLine(" scale quantity of recipe by (1) 0.5(half) ,(2) 2 (double) 0r (3) 3(triple) (choose between 1 , 2 or 3)");
-            Console.WriteLine("choose from the 3 above options");
-            Convert.ToDouble(scale);
-            scale = Convert.ToInt32(Console.ReadLine());
-            if (scale == 1)
-            { r = 0.5; }
-            else if (scale == 2)
-            { r = 2; }
-            else if (scale == 3)
-            { r = 3; }
-
-
-
-            for (int i = 0; i < iQuantity.Length; i++)
-            {
-
-                Console.WriteLine(listOfI[i]);
-                Console.WriteLine(iQuantity[i] * r + "" + ingredientM[i]);
-
-            }
-
-            Console.WriteLine("");
-
-            Console.WriteLine("what would you like to do (choose a number)");
-            Console.WriteLine("1 : enter recipe");
-            Console.WriteLine("2 : Display recipe");
-            Console.WriteLine("3 : scale recipe");
-            Console.WriteLine("4 : reset to original scale ");
-            Console.WriteLine("5 : clear data");
-            Console.WriteLine("6 : exit");
-
-            menu5 = Console.ReadLine();//taking user input
-            while (menu5 != "6")
-            {
-                menu5 = Console.ReadLine();//taking user input
-
-                if (menu5.Equals("1"))
-                { Recipe(); } // recipeE is in the Creation class
-                else if (menu5.Equals("2"))
-                { Display(); } // Display is in the Creation class
-                else if (menu5.Equals("3"))
-                { Scale(); }  //  Scale is in the Creation class
-                else if (menu5.Equals("4"))
-                { Reset(); }  // Reset is in the Creation class
-                else if (menu5.Equals("5"))
-                { Clear(); }  // Clear is in the Creation class
-                else if (menu5.Equals("6"))
-                { System.Environment.Exit(1); } // feaature to exist the program 
-                else
-                {
-                    Console.WriteLine("please only enter numbers given and no letters ");
-                    Recipe();
-                }
-            }
-
-
-
+            Console.WriteLine("please only enter numbers given and no letters ");
+            m1.Run();
         }
-    }
+        else if (menu4 < 1)
+        {
+            Console.WriteLine("please only enter numbers given and no letters ");
+            m1.Run();
+        }
+
+       }     
+            //-----------------------------------------------------------------------------
+            public void Scale()
+            {
+                // recieveing user input if they want to scale
+                Console.WriteLine("");
+                Console.WriteLine("would you like to Scale your recipe yes or no");
+                q1 = Console.ReadLine();
+
+           if (q1.ToLower() == "yes")
+             {
+                    Console.WriteLine(" scale quantity of recipe by (1) 0.5(half) ,(2) 2 (double) 0r (3) 3(triple) (choose between 1 , 2 or 3)");
+                    Console.WriteLine("choose from the 3 above options");
+                    Convert.ToDouble(scale);
+                    scale = Convert.ToInt32(Console.ReadLine());
+                    if (scale == 1)
+                      {  r = 0.5; }
+                    else if (scale == 2)
+                      {  r = 2; } 
+                    else if (scale == 3)
+                      {  r = 3; }
+
+            
+
+                   for (int i = 0; i < iQuantity.Length; i++)
+                   {
+
+                        Console.WriteLine(listOfI[i]);
+                        Console.WriteLine(iQuantity[i] * r + "" + ingredientM[i]);
+
+                   }
+
+                        Console.WriteLine("");
+
+                       Console.WriteLine("what would you like to do (choose a number)");
+                       Console.WriteLine("1 : enter recipe");
+                       Console.WriteLine("2 : Display recipe");
+                       Console.WriteLine("3 : scale recipe");
+                       Console.WriteLine("4 : reset to original scale ");
+                       Console.WriteLine("5 : clear data");
+                       Console.WriteLine("6 : exit");
+
+            menu5 = Convert.ToInt32(Console.ReadLine());//taking user input
+              if (menu5 <= 6)
+              {
+                if (menu5 == 1)
+                { Recipe(); } // recipeE is in the Creation class
+                else if (menu5 == 2)
+                { Display(); } // Display is in the Creation class
+                else if (menu5== 3)
+                { Scale(); }  //  Scale is in the Creation class
+                else if (menu5 == 4)
+                { Reset(); }  // Reset is in the Creation class
+                else if (menu5 == 5)
+                { Clear(); }  // Clear is in the Creation class
+                else if (menu5 == 6)
+                { System.Environment.Exit(1); } // feaature to exist the program 
+              }
+               else if (menu5 > 6)
+               {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                m1.Run();
+               }
+               else if (menu5 < 1)
+               {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                m1.Run();
+               }
+            }
+                else if (q1.ToLower() == "no")
+                {
+                    Clear();
+                }
+
+            
+
+             }
              //--------------------------------------------------------------------------------------
             public void Reset() 
         
             {
-
+        double d = r;
               Console.WriteLine("would you like to Scale back to your original  recipe yes or no");
                 q2 = Console.ReadLine();
 
@@ -374,8 +386,9 @@ namespace POEPART1
                     for (int i = 0; i < iQuantity.Length; i++)
                     {
                         Console.WriteLine(listOfI[i]);
-                        Console.WriteLine(iQuantity[i] / r + "" + ingredientM[i]);
-                    }
+                        Console.WriteLine(iQuantity[i] / d );
+                      Console.WriteLine(ingredientM[i]);
+            }
                 }
                 else if (q2.ToLower() == "no")
                 {
@@ -392,29 +405,31 @@ namespace POEPART1
         Console.WriteLine("5 : clear data");
         Console.WriteLine("6 : exit");
 
-        menu6 = Console.ReadLine();//taking user input
-
-        while (menu6 != "6")
+        menu6 = Convert.ToInt32(Console.ReadLine());//taking user input
+        if (menu6 <= 6)
         {
-            menu6 = Console.ReadLine();//taking user input
-
-            if (menu6.Equals("1"))
+            if (menu6 == 1)
             { Recipe(); } // recipeE is in the Creation class
-            else if (menu6.Equals("2"))
+            else if (menu6 == 2)
             { Display(); } // Display is in the Creation class
-            else if (menu6.Equals("3"))
+            else if (menu6 == 3)
             { Scale(); }  //  Scale is in the Creation class
-            else if (menu6.Equals("4"))
+            else if (menu6 == 4)
             { Reset(); }  // Reset is in the Creation class
-            else if (menu6.Equals("5"))
+            else if (menu6 == 5)
             { Clear(); }  // Clear is in the Creation class
-            else if (menu6.Equals("6"))
+            else if (menu6 == 6)
             { System.Environment.Exit(1); } // feaature to exist the program 
-            else
-            {
-                Console.WriteLine("please only enter numbers given and no letters ");
-                Recipe();
-            }
+        }
+        else if (menu6 > 6)
+        {
+            Console.WriteLine("please only enter numbers given and no letters ");
+            m1.Run();
+        }
+        else if (menu6 < 1)
+        {
+            Console.WriteLine("please only enter numbers given and no letters ");
+            m1.Run();
         }
 
 
