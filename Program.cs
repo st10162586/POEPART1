@@ -3,6 +3,7 @@ using System;
 using System.Net.Mail;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace POEPART1
@@ -35,7 +36,7 @@ namespace POEPART1
             Console.WriteLine("what would you like to do (choose a number)");
             Console.WriteLine("1 : enter recipe");
             Console.WriteLine("2 : Display recipe");
-            Console.WriteLine("2 : scale recipe");
+            Console.WriteLine("3 : scale recipe");
             Console.WriteLine("3 : reset to original scale ");
             Console.WriteLine("4 : clear data");
             Console.WriteLine("5 : exit");
@@ -86,6 +87,7 @@ namespace POEPART1
             int menu3; // for the menu to move around the code
             int menu4;
             int menu5;
+             double r;
 
             int c = 0; // count to start positioning in the first loop 
             int s = 0; // count for the second loop
@@ -101,7 +103,7 @@ namespace POEPART1
 
             //intislising of arrays 
             private string[] listOfI;
-            private Double[] iQuantity;
+            private int[] iQuantity;
             private string[] ingredientM;
             private string[] steps;
 
@@ -111,17 +113,27 @@ namespace POEPART1
 
             {
                 Menu2 m = new Menu2();
+              
+             
+                 Console.WriteLine("what is the name of the recipe");
+                  recipeN = Console.ReadLine();
 
-                Console.WriteLine("what is the name of the recipe");
-                recipeN = Console.ReadLine();
-
-
-                Console.WriteLine("enter the number of ingredients needed for the recipe");
-                nIngredients = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+            Console.WriteLine("enter the number of ingredients needed for the recipe");
+            nIngredients = Convert.ToInt32(Console.ReadLine());
+            } 
+            catch (Exception e )
+            { 
+            Console.WriteLine("enter only a number not a world or letter");
+            Recipe();
+            }
+            
+            
 
                 // decleration of arrays along with their size using input number of ingredients.
                 listOfI = new string[nIngredients];
-                iQuantity = new Double[nIngredients];
+                iQuantity = new int[nIngredients];
                 ingredientM = new string[nIngredients];
 
                 while (c < nIngredients)
@@ -154,6 +166,7 @@ namespace POEPART1
                                 break;
                             default:
                                 Console.WriteLine("Please enter the number of the value you want to enter");
+                                 Recipe();
                                 break;
 
                         }
@@ -186,7 +199,7 @@ namespace POEPART1
                 Console.WriteLine("what would you like to do (choose a number)");
                 Console.WriteLine("1 : enter recipe");
                 Console.WriteLine("2 : Display recipe");
-                Console.WriteLine("2 : scale recipe");
+                Console.WriteLine("3 : scale recipe");
                 Console.WriteLine("3 : reset to original scale ");
                 Console.WriteLine("4 : clear data");
                 Console.WriteLine("5 : exit");
@@ -250,7 +263,7 @@ namespace POEPART1
 
                 Console.WriteLine("what would you like to do (choose a number)");
                 Console.WriteLine("1 : enter recipe");
-                Console.WriteLine("2 : Display recipe");
+                Console.WriteLine("3 : Display recipe");
                 Console.WriteLine("2 : scale recipe");
                 Console.WriteLine("3 : reset to original scale ");
                 Console.WriteLine("4 : clear data");
@@ -293,18 +306,23 @@ namespace POEPART1
 
                 if (q1.ToLower() == "yes")
                 {
-                    Console.WriteLine(" scale quantity of recipe by 0.5(half) , 2 (double) 0r 3(triple)");
+                    Console.WriteLine(" scale quantity of recipe by (1) 0.5(half) ,(2) 2 (double) 0r (3) 3(triple) (choose between 1 , 2 or 3)");
                     Console.WriteLine("choose from the 3 above options");
                     Convert.ToDouble(scale);
                     scale = Convert.ToInt32(Console.ReadLine());
-
+                    if (scale == 1)
+                      {  r = 0.5; }
+                    else if (scale == 2)
+                      {  r = 2; } 
+                    else if (scale == 3)
+                      {  r = 3; }
 
 
                     for (int i = 0; i < iQuantity.Length; i++)
                     {
 
                         Console.WriteLine(listOfI[i]);
-                        Console.WriteLine(iQuantity[i] *= scale);
+                        Console.WriteLine(iQuantity[i] * r);
 
                     }
                 }
@@ -336,10 +354,10 @@ namespace POEPART1
 
   
             }
-            public void Clear()
+            public void Clear() 
             {
                 listOfI = new string[0];
-                iQuantity = new Double [0];
+                iQuantity = new int [0];
                 ingredientM = new string[0];
                 steps = new string[0];
 
