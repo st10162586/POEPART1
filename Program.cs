@@ -77,11 +77,13 @@ namespace POEPART1
         class Creation
         {
 
-
+             
+            Menu1 m1 = new Menu1();
             String recipeN; // recipe name 
             int nIngredients; // number of ingrediants 
             int numS; // number of steps 
             int scale; // to scale 
+            int menu3; // for the menu to move around the code
 
             int c = 0; // count to start positioning in the first loop 
             int s = 0; // count for the second loop
@@ -153,11 +155,7 @@ namespace POEPART1
                                 break;
 
                         }
-
-                    
-
-
-                    count++;
+                   count++;
                     c++;
                     // note to self do not add break when creating such a loop
 
@@ -182,6 +180,41 @@ namespace POEPART1
                 }
 
                 Console.WriteLine("");
+
+                Console.WriteLine("what would you like to do (choose a number)");
+                Console.WriteLine("1 : enter recipe");
+                Console.WriteLine("2 : Display recipe");
+                Console.WriteLine("2 : scale recipe");
+                Console.WriteLine("3 : reset to original scale ");
+                Console.WriteLine("4 : clear data");
+                Console.WriteLine("5 : exit");
+
+                    menu3 = Convert.ToInt32(Console.ReadLine());//taking user input
+            if (menu3<= 6)
+            {
+                if (menu3 == 1)
+                { Recipe(); } // recipeE is in the Creation class
+                else if (menu3 == 2)
+                { Display(); } // Display is in the Creation class
+                else if (menu3== 3)
+                { Scale(); }  //  Scale is in the Creation class
+                else if (menu3 == 4)
+                { Reset(); }  // Reset is in the Creation class
+                else if (menu3== 5)
+                { Clear(); }  // Clear is in the Creation class
+                else if (menu3 == 6)
+                { System.Environment.Exit(1); } // feaature to exist the program 
+            }
+            else if (menu3 > 6)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                m1.Run();
+            }
+            else if (menu3 < 1)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                m1.Run();
+            }
 
             }
 
