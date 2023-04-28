@@ -12,7 +12,7 @@ namespace POEPART1
     {
         public static void Main(String[] args)
         {
-            Creation c = new Creation();
+           
 
             Console.BackgroundColor = ConsoleColor.Magenta;
             Menu1 m = new Menu1();
@@ -30,21 +30,48 @@ namespace POEPART1
             Creation c = new Creation(); // creating a constructor for creation class to use its methods 
 
             // creating a  menu for the user to enter software
+            int menu;
+
             Console.WriteLine("what would you like to do (choose a number)");
             Console.WriteLine("1 : enter recipe");
+            Console.WriteLine("2 : Display recipe");
             Console.WriteLine("2 : scale recipe");
             Console.WriteLine("3 : reset to original scale ");
             Console.WriteLine("4 : clear data");
             Console.WriteLine("5 : exit");
-            ///sdsfeetgryryhhf
-            int menu;
-            menu = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("2 : display");
-            Console.WriteLine("3 : scale recipe");
-            Console.WriteLine("4 : reset to original scale ");
-            Console.WriteLine("5 : clear data");
-            Console.WriteLine("6 : exit");
+
+            
+            // error handling with exeption handling
+
+            menu = Convert.ToInt32(Console.ReadLine());//taking user input
+            if (menu <= 6)
+            {
+                if (menu == 1)
+                { c.Recipe(); } // recipeE is in the Creation class
+                else if (menu == 2)
+                { c.Display(); } // Display is in the Creation class
+                else if (menu == 3)
+                { c.Scale(); }  //  Scale is in the Creation class
+                else if (menu == 4)
+                { c.Reset(); }  // Reset is in the Creation class
+                else if (menu == 5)
+                { c.Clear(); }  // Clear is in the Creation class
+                else if (menu == 6)
+                { System.Environment.Exit(1); } // feaature to exist the program 
+            }
+            else if (menu > 6)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                Run();
+            }
+            else if (menu < 1)
+            {
+                Console.WriteLine("please only enter numbers given and no letters ");
+                Run();
+            }
         }
+
+    }
     }
 
         class Creation
@@ -101,10 +128,9 @@ namespace POEPART1
                     Console.WriteLine("what is the quantity of the ingrediant" + "" + count + ""); // eg (which would make it 2 flour or 0.2 flour)
                     iQuantity[c] = Convert.ToInt32(Console.ReadLine());
 
-                    bool flag = false;
+                    bool flag = true;
 
-                    while (flag)
-                    {
+                  
                         Console.WriteLine("Units of measurment: \n1. cup  \n2. tablespoon \n3. teaspoon ");
                         ingredientM[c] = Console.ReadLine();
 
@@ -128,7 +154,7 @@ namespace POEPART1
 
                         }
 
-                    }
+                    
 
 
                     count++;
@@ -260,4 +286,5 @@ namespace POEPART1
             }
 
         }
-}
+
+
