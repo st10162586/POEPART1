@@ -77,8 +77,6 @@ namespace POEPART1
 
         class Creation
         {
-
-             
             Menu1 m1 = new Menu1();
             String recipeN; // recipe name 
             int nIngredients; // number of ingrediants 
@@ -107,10 +105,7 @@ namespace POEPART1
             private string[] ingredientM;
             private string[] steps;
 
-
-
             public void Recipe()
-
             {
                 Menu2 m = new Menu2();
               
@@ -144,7 +139,6 @@ namespace POEPART1
                     Console.WriteLine("what is the quantity of the ingrediant" + "" + count + ""); // eg (which would make it 2 flour or 0.2 flour)
                     iQuantity[c] = Convert.ToInt32(Console.ReadLine());
 
-                    bool flag = true;
 
                   
                         Console.WriteLine("Units of measurment: \n1. cup  \n2. tablespoon \n3. teaspoon ");
@@ -176,18 +170,18 @@ namespace POEPART1
 
                 }
 
-         try
-           {
-            Console.WriteLine("how many steps does it take to make the recipe ");
-            numS = Convert.ToInt32(Console.ReadLine());
-           }
-          catch (Exception b) { Console.WriteLine("please only enter a number for steps"); }
+               try
+                {
+                 Console.WriteLine("how many steps does it take to make the recipe ");
+                 numS = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception b) { Console.WriteLine("please only enter a number for steps"); }
                
                // adding a size to array according to the amount of steps user input
                 steps = new String[numS];
 
 
-                while (s < numS)
+                while (s < numS) //while to run steps
                 {
                     Console.WriteLine("please enter step" + index + " in detail on what should be done in recipe");
                     steps[s] = Console.ReadLine();
@@ -203,9 +197,9 @@ namespace POEPART1
                 Console.WriteLine("1 : enter recipe");
                 Console.WriteLine("2 : Display recipe");
                 Console.WriteLine("3 : scale recipe");
-                Console.WriteLine("3 : reset to original scale ");
-                Console.WriteLine("4 : clear data");
-                Console.WriteLine("5 : exit");
+                Console.WriteLine("4 : reset to original scale ");
+                Console.WriteLine("5: clear data");
+                Console.WriteLine("6 : exit");
 
                     menu3 = Convert.ToInt32(Console.ReadLine());//taking user input
             if (menu3<= 6)
@@ -235,7 +229,6 @@ namespace POEPART1
             }
 
             }
-
             public void Display()
             {
 
@@ -247,7 +240,7 @@ namespace POEPART1
                 {
 
 
-                    Console.WriteLine(listOfI[a]+ " " + iQuantity + " " + ingredientM[a]); // display of Ingredients
+                    Console.WriteLine(listOfI[a]+ " " + iQuantity[a] + " " + ingredientM[a]); // display of Ingredients
 
 
                 }
@@ -266,11 +259,11 @@ namespace POEPART1
 
                 Console.WriteLine("what would you like to do (choose a number)");
                 Console.WriteLine("1 : enter recipe");
-                Console.WriteLine("3 : Display recipe");
-                Console.WriteLine("2 : scale recipe");
-                Console.WriteLine("3 : reset to original scale ");
-                Console.WriteLine("4 : clear data");
-                Console.WriteLine("5 : exit");
+                Console.WriteLine("2 : Display recipe");
+                Console.WriteLine("3 : scale recipe");
+                Console.WriteLine("4 : reset to original scale ");
+                Console.WriteLine("5 : clear data");
+                Console.WriteLine("6 : exit");
 
                  menu4 = Convert.ToInt32(Console.ReadLine());//taking user input
         if (menu3 <= 6)
@@ -299,7 +292,7 @@ namespace POEPART1
             m1.Run();
         }
 
-    }
+       }
             public void Scale()
             {
                 // recieveing user input if they want to scale
@@ -320,8 +313,11 @@ namespace POEPART1
                     else if (scale == 3)
                       {  r = 3; }
 
+            int teaspoon = 5;
+            int cup = 8 * teaspoon;
+            int tablespoon = 3 * teaspoon;
 
-                    for (int i = 0; i < iQuantity.Length; i++)
+            for (int i = 0; i < iQuantity.Length; i++)
                     {
 
                         Console.WriteLine(listOfI[i]);
@@ -337,17 +333,22 @@ namespace POEPART1
             
 
              }
-            public void Reset()
+            public void Reset() 
+        
             {
+
+            
+              
                 Console.WriteLine("would you like to Scale back to your original  recipe yes or no");
                 q2 = Console.ReadLine();
 
                 if (q2.ToLower() == "yes")
                 {
-                    for (int i = 0; i < iQuantity.Length; i++)
+             
+            for (int i = 0; i < iQuantity.Length; i++)
                     {
                         Console.WriteLine(listOfI[i]);
-                        Console.WriteLine(iQuantity[i] /= scale);
+                        Console.WriteLine(iQuantity[i] / r);
                     }
                 }
                 else if (q2.ToLower() == "no")
