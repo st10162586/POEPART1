@@ -118,7 +118,7 @@ namespace POEPART1
                  Console.WriteLine("what is the name of the recipe");
                   recipeN = Console.ReadLine();
 
-            try
+            try // exeption handling to assist with errors
             {
             Console.WriteLine("enter the number of ingredients needed for the recipe");
             nIngredients = Convert.ToInt32(Console.ReadLine());
@@ -176,11 +176,14 @@ namespace POEPART1
 
                 }
 
-
-                Console.WriteLine("how many steps does it take to make the recipe ");
-                numS = Convert.ToInt32(Console.ReadLine());
-
-                // adding a size to array according to the amount of steps user input
+         try
+           {
+            Console.WriteLine("how many steps does it take to make the recipe ");
+            numS = Convert.ToInt32(Console.ReadLine());
+           }
+          catch (Exception b) { Console.WriteLine("please only enter a number for steps"); }
+               
+               // adding a size to array according to the amount of steps user input
                 steps = new String[numS];
 
 
