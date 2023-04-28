@@ -313,42 +313,7 @@ namespace POEPART1
                     Clear();
                 }
 
-               Console.WriteLine("");
-
-               Console.WriteLine("what would you like to do (choose a number)");
-               Console.WriteLine("1 : enter recipe");
-               Console.WriteLine("2 : Display recipe");
-               Console.WriteLine("2 : scale recipe");
-               Console.WriteLine("3 : reset to original scale ");
-               Console.WriteLine("4 : clear data");
-               Console.WriteLine("5 : exit");
-
-                menu5 = Convert.ToInt32(Console.ReadLine());//taking user input
-            if (menu5 <= 6)
-            {
-              if (menu5 == 1)
-               { Recipe(); } // recipeE is in the Creation class
-                else if (menu5 == 2)
-               { Display(); } // Display is in the Creation class
-                else if (menu5 == 3)
-               { Scale(); }  //  Scale is in the Creation class
-                else if (menu5 == 4)
-               { Reset(); }  // Reset is in the Creation class
-                else if (menu5 == 5)
-               { Clear(); }  // Clear is in the Creation class
-                else if (menu5 == 6)
-               { System.Environment.Exit(1); } // feaature to exist the program 
-              }
-               else if (menu5 > 6)
-              {
-               Console.WriteLine("please only enter numbers given and no letters ");
-               m1.Run();
-              }
-              else if (menu5 < 1)
-              {
-              Console.WriteLine("please only enter numbers given and no letters ");
-              m1.Run();
-               }
+            
 
              }
             public void Reset()
